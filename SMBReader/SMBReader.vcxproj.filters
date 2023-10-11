@@ -24,6 +24,9 @@
     <ClCompile Include="..\src\NegotiateReader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\SessionSetupAndXReader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\SMBCommandType.h">
@@ -36,6 +39,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\src\NegotiateReader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SessionSetupAndXReader.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

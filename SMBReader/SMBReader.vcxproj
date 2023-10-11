@@ -142,12 +142,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\NegotiateReader.cpp" />
+    <ClCompile Include="..\src\SessionSetupAndXReader.cpp" />
     <ClCompile Include="..\src\SMBCommand.cpp" />
     <ClCompile Include="..\src\source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\BaseClass.h" />
     <ClInclude Include="..\src\NegotiateReader.h" />
+    <ClInclude Include="..\src\SessionSetupAndXReader.h" />
     <ClInclude Include="..\src\SMBCommand.h" />
     <ClInclude Include="..\src\SMBCommandType.h" />
   </ItemGroup>
