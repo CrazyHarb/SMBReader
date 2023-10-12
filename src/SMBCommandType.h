@@ -186,6 +186,8 @@ const SMB_COMMAND_STRING g_array_smbCommand[] = {
 {SMB_COM_NO_ANDX_COMMAND 	, "Also known as the \"NIL\" command. It identifies the end of an AndX Chain, and is only valid in that context. See section 2.2.3.4."}
 };
 
+#define SMB_FLAGS2_UNICODE 0x8000
+
 typedef DWORD SMB_ERROR;
 typedef struct _SMB_HEADER {
 	UCHAR Protocol[4];  // 0xff S M B

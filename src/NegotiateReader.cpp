@@ -14,7 +14,7 @@ NegotiateReader* NegotiateReader::GetInstance() {
 	return &g_negotiatereader_instance;
 }
 
-void NegotiateReader::DumpResponse(PSMB_Parameters a_psmb_parameters, PSMB_Data a_psmb_data) {
+void NegotiateReader::DumpResponse(PSMB_HEADER a_psmb_header, PSMB_Parameters a_psmb_parameters, PSMB_Data a_psmb_data) {
     printf("Parameter->\r\n");
     if (a_psmb_parameters->WordCount == 0x11)
     {
@@ -69,7 +69,7 @@ void NegotiateReader::DumpResponse(PSMB_Parameters a_psmb_parameters, PSMB_Data 
     }
 }
 
-void NegotiateReader::DumpRequest(PSMB_Parameters a_psmb_parameters, PSMB_Data a_psmb_data) {
+void NegotiateReader::DumpRequest(PSMB_HEADER a_psmb_header, PSMB_Parameters a_psmb_parameters, PSMB_Data a_psmb_data) {
     printf("Parameter->\r\n");
 
     printf("    WordCount:%d\r\n", a_psmb_parameters->WordCount);

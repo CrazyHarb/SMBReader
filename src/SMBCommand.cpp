@@ -92,20 +92,20 @@ void DumpParamter(unsigned char *a_ucharptr_buffer,ULONG a_ulong_bufferlen, unsi
                 {
                     if (a_psmb_header->Flags & SMB_FLAGS_REPLY)
                     {
-                        NegotiateReader::GetInstance()->DumpResponse(l_smbparemterptr_instance, l_smbdataptr_instance);
+                        NegotiateReader::GetInstance()->DumpResponse(a_psmb_header, l_smbparemterptr_instance, l_smbdataptr_instance);
                     }
                     else {
-                        NegotiateReader::GetInstance()->DumpRequest(l_smbparemterptr_instance, l_smbdataptr_instance);
+                        NegotiateReader::GetInstance()->DumpRequest(a_psmb_header, l_smbparemterptr_instance, l_smbdataptr_instance);
                     }
                 }
                 else if (a_uchar_command == SMB_COM_SESSION_SETUP_ANDX)
                 {
                     if (a_psmb_header->Flags & SMB_FLAGS_REPLY)
                     {
-
+                        SessionSetupAndXReader::GetInstance()->DumpResponse(a_psmb_header, l_smbparemterptr_instance, l_smbdataptr_instance);
                     }
                     else {
-                        SessionSetupAndXReader::GetInstance()->DumpRequest(l_smbparemterptr_instance, l_smbdataptr_instance);
+                        SessionSetupAndXReader::GetInstance()->DumpRequest(a_psmb_header, l_smbparemterptr_instance, l_smbdataptr_instance);
                     }
                 }
             }
@@ -122,8 +122,8 @@ void SMBCommand::DumpInfo() {
     printf("[Protocol]0x%02x %c %c %c \n", l_smb_header->Protocol[0],
            l_smb_header->Protocol[1], l_smb_header->Protocol[2],
            l_smb_header->Protocol[3]);
-    printf("[Command]0x%02x: %s \n", l_smb_header->Command,
-           FindDescByCommand(l_smb_header->Command).c_str());
+    printf("[Command]0x%02x: %s [%s]\n", l_smb_header->Command,
+           FindDescByCommand(l_smb_header->Command).c_str(), (l_smb_header->Flags & SMB_FLAGS_REPLY) ? "response" : "request");
 
     printf("[Status]0x%08x \n", l_smb_header->Status);
 
