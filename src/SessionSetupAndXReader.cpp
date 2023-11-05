@@ -84,7 +84,7 @@ void SessionSetupAndXReader::DumpResponse(PSMB_HEADER a_psmb_header, PSMB_Parame
             l_uchar_dataBuffer += (lstrlenA((CHAR*)l_uchar_dataBuffer) + 1) * sizeof(CHAR);
         }
 
-        if (l_uchar_dataBuffer > l_uchar_dataBufferEnd)
+        if (l_uchar_dataBuffer != l_uchar_dataBufferEnd)
         {
             printf("[ERROR]buffer end is not equal current buffer pointer\r\n");
         }

@@ -27,6 +27,9 @@
     <ClCompile Include="..\src\SessionSetupAndXReader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\SMBCOMTreeConnectAndXReader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\SMBCommandType.h">
@@ -42,6 +45,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\src\SessionSetupAndXReader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SMBCOMTreeConnectAndXReader.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
