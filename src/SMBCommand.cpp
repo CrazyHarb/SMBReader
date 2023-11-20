@@ -2,6 +2,7 @@
 #include "NegotiateReader.h"
 #include "SessionSetupAndXReader.h"
 #include "SMBCOMTreeConnectAndXReader.h"
+#include "Transaction2Reader.h"
 
 #include "stdio.h"
 
@@ -117,6 +118,16 @@ void DumpParamter(unsigned char *a_ucharptr_buffer,ULONG a_ulong_bufferlen, unsi
                     }
                     else {
                         SMBCOMTreeConnectAndXReader::GetInstance()->DumpRequest(a_psmb_header, l_smbparemterptr_instance, l_smbdataptr_instance);
+                    }
+                }
+                else if (a_uchar_command == SMB_COM_TRANSACTION2)
+                {
+                    if (a_psmb_header->Flags & SMB_FLAGS_REPLY)
+                    {
+                        SMBCOMTranscation2Reader::GetInstance()->DumpResponse(a_psmb_header, l_smbparemterptr_instance, l_smbdataptr_instance);
+                    }
+                    else {
+                        SMBCOMTranscation2Reader::GetInstance()->DumpRequest(a_psmb_header, l_smbparemterptr_instance, l_smbdataptr_instance);
                     }
                 }
             }

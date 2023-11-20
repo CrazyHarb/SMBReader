@@ -146,6 +146,7 @@
     <ClCompile Include="..\src\SMBCommand.cpp" />
     <ClCompile Include="..\src\SMBCOMTreeConnectAndXReader.cpp" />
     <ClCompile Include="..\src\source.cpp" />
+    <ClCompile Include="..\src\TRANSACTION2Reader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\BaseClass.h" />
@@ -154,6 +155,7 @@
     <ClInclude Include="..\src\SMBCommand.h" />
     <ClInclude Include="..\src\SMBCommandType.h" />
     <ClInclude Include="..\src\SMBCOMTreeConnectAndXReader.h" />
+    <ClInclude Include="..\src\Transaction2Reader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
